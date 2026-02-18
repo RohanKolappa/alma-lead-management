@@ -10,7 +10,6 @@ Prospects submit their information through a public endpoint. Authenticated atto
 - Python 3.9+ (for running tests locally)
 
 ## Quick Start
-
 ```bash
 cp .env.example .env
 docker compose up --build
@@ -35,7 +34,6 @@ Database migrations run automatically on startup.
 ## Authentication
 
 The system uses JWT authentication. For testing, a hardcoded attorney account is provided:
-
 ```
 username: attorney@alma.com
 password: password123
@@ -46,14 +44,14 @@ Use the `/api/v1/auth/login` endpoint (or the "Authorize" button in Swagger UI) 
 ## Running Tests
 
 Tests use an in-memory SQLite database, so no external services are required.
-
 ```bash
+python3 -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
 PYTHONPATH=. pytest tests/ -v
 ```
 
 ## Project Structure
-
 ```
 app/
   api/           Routes and FastAPI dependency injection
